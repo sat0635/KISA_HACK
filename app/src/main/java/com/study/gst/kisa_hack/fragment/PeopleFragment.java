@@ -77,7 +77,7 @@ public class PeopleFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
             Glide.with
                     (holder.itemView.getContext())
                     .load(userModels.get(position).profileImageUrl)
@@ -88,6 +88,7 @@ public class PeopleFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), FirstSendActivity.class);
+                    intent.putExtra("email",userModels.get(position).email);
                     startActivity(intent);
                 }
             });
