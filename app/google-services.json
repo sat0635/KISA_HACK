@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "672400711221",
+    "firebase_url": "https://kisahack-9da80.firebaseio.com",
+    "project_id": "kisahack-9da80",
+    "storage_bucket": "kisahack-9da80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672400711221:android:7e5a5ca115bc92a1",
+        "android_client_info": {
+          "package_name": "com.study.gst.kisa_hack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672400711221-fjrvme5msn1h1mhpjbs5ncq9d6v1i4nk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.study.gst.kisa_hack",
+            "certificate_hash": "757b55fbcca06e4d673a92037a1891b12407f252"
+          }
+        },
+        {
+          "client_id": "672400711221-osj2eavbvpd2jjl7hb5fi2av0vasasep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK6Hb9PE-ap5RAuY4d_o6bgRAdJX9shw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672400711221-osj2eavbvpd2jjl7hb5fi2av0vasasep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
