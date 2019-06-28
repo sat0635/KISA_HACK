@@ -20,6 +20,7 @@
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:text="송금 하기"
+        android:gravity="bottom"
         android:id="@+id/FirstSendActivity_button_send"
         android:layout_width="match_parent"
         android:layout_height="150dp" />
