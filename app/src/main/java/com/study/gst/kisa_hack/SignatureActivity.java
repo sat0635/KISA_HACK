@@ -24,6 +24,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
@@ -37,6 +42,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -52,6 +59,7 @@ public class SignatureActivity extends AppCompatActivity {
     private Bitmap jungle ;
     private Bitmap dino;
     private ImageView imageView;
+    private StorageReference mStorageRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -143,22 +151,30 @@ public class SignatureActivity extends AppCompatActivity {
 
                 addJpgSignatureToGallery(jungle,"image.jpg");
 
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMHH_mmss");
+                Date now = new Date();
+                String filename = formatter.format(now) + ".png";
+                //storage 주소와 폴더 파일명을 지정해 준다.
 
+                mStorageRef = FirebaseStorage.getInstance().getReference();
+                Uri file = Uri.fromFile(new File("/storage/emulated/0/Pictures/SignaturePad/image.jpg"));
+                StorageReference riversRef = mStorageRef.child("images/"+filename);
 
-                try {
-                    String uploadId = UUID.randomUUID().toString();
-                    new MultipartUploadRequest(SignatureActivity.this, uploadId, Constants.UPLOAD_URL)
-                            .addFileToUpload("/storage/emulated/0/Pictures/SignaturePad/image.jpg", "image") //Adding file
-                            .addParameter("name", "22") //Adding text parameter to the request
-                            .setNotificationConfig(new UploadNotificationConfig())
-                            .setMaxRetries(2)
-                            .startUpload(); //Starting the upload
-
-                } catch (Exception exc) {
-                    Log.d("tag","lopallllll");
-
-                }
-
+                riversRef.putFile(file)
+                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                // Get a URL to the uploaded content
+                                Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception exception) {
+                                // Handle unsuccessful uploads
+                                // ...
+                            }
+                        });
 
             }
 
