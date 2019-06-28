@@ -25,6 +25,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.study.gst.kisa_hack.FirstSendActivity;
+import com.study.gst.kisa_hack.LoginActivity;
+import com.study.gst.kisa_hack.MainActivity;
 import com.study.gst.kisa_hack.R;
 import com.study.gst.kisa_hack.chat.MessageActivity;
 import com.study.gst.kisa_hack.model.UserModel;
@@ -84,7 +87,8 @@ public class PeopleFragment extends Fragment {
             ((CustomViewHolder)holder).button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    return;
+                    Intent intent = new Intent(view.getContext(), FirstSendActivity.class);
+                    startActivity(intent);
                 }
             });
             ((CustomViewHolder)holder).button2.setOnClickListener(new View.OnClickListener() {
