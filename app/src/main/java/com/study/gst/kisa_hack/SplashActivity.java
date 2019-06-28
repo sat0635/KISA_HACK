@@ -64,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
                         if (task.isSuccessful()){
                             mFirebaseRemoteConfig.activateFetched();
                         }else{
