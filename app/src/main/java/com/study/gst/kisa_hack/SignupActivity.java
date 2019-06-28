@@ -94,6 +94,7 @@ public class SignupActivity extends AppCompatActivity {
                                         String imageUrl = task.getResult().getDownloadUrl().toString();
 
                                         UserModel userModel = new UserModel();
+                                        userModel.email = email.getText().toString();
                                         userModel.userName = name.getText().toString();
                                         userModel.profileImageUrl=imageUrl;
                                         userModel.userAccount = account.getText().toString();

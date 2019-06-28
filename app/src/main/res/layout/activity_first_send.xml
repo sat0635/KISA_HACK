@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:id="@+id/signupActivity_edittext_password"
-            android:inputType="textPassword"
+            android:id="@+id/FirstSendActivity_edittext_money"
             android:hint="금액을 입력하세요"
             android:textSize="30dp"
             android:layout_width="match_parent"
@@ -20,7 +19,10 @@
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:text="송금 하기"
-        android:gravity="bottom"
+        android:textSize="40dp"
+        android:background="#F8F042"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="300dp"
         android:id="@+id/FirstSendActivity_button_send"
         android:layout_width="match_parent"
         android:layout_height="150dp" />

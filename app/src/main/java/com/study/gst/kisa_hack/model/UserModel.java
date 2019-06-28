@@ -3,6 +3,7 @@ package com.study.gst.kisa_hack.model;
 import android.widget.Button;
 
 public class UserModel {
+    public String email;
     public String userName;
     public String profileImageUrl;
     public String userAccount;
