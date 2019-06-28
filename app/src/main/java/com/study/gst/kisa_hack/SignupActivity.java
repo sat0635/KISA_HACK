@@ -35,6 +35,8 @@ public class SignupActivity extends AppCompatActivity {
     private EditText email;
     private EditText name;
     private EditText password;
+    private EditText account;
+    private EditText account_password;
     private Button signup;
     private String splash_background;
 
@@ -65,6 +67,9 @@ public class SignupActivity extends AppCompatActivity {
         email=(EditText)findViewById(R.id.signupActivity_edittext_email);
         name=(EditText)findViewById(R.id.signupActivity_edittext_name);
         password=(EditText)findViewById(R.id.signupActivity_edittext_password);
+        account=(EditText)findViewById(R.id.signupActivity_edittext_account);
+        account_password=(EditText)findViewById(R.id.signupActivity_edittext_account_password);
+
         signup = (Button) findViewById(R.id.signupActivity_button_signup);
         signup.setBackgroundColor(Color.parseColor(splash_background));
         signup.setOnClickListener(new View.OnClickListener(){
@@ -91,6 +96,8 @@ public class SignupActivity extends AppCompatActivity {
                                         UserModel userModel = new UserModel();
                                         userModel.userName = name.getText().toString();
                                         userModel.profileImageUrl=imageUrl;
+                                        userModel.userAccount = account.getText().toString();
+                                        userModel.userAccountPassword = account_password.getText().toString();
 
                                         FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
