@@ -149,7 +149,7 @@ public class SignatureActivity extends AppCompatActivity {
                     String uploadId = UUID.randomUUID().toString();
                     new MultipartUploadRequest(SignatureActivity.this, uploadId, Constants.UPLOAD_URL)
                             .addFileToUpload("/storage/emulated/0/Pictures/SignaturePad/image.jpg", "image") //Adding file
-                            .addParameter("name", "image.png") //Adding text parameter to the request
+                            .addParameter("name", "22") //Adding text parameter to the request
                             .setNotificationConfig(new UploadNotificationConfig())
                             .setMaxRetries(2)
                             .startUpload(); //Starting the upload
