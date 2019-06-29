@@ -24,35 +24,28 @@
             android:layout_marginRight="2dp"
             android:text="아이디"
             android:textColor="#FFFFFF"/>
+
         <Button
             android:id="@+id/button1"
-            android:text="송금"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="2dp"
-            android:layout_gravity="center_vertical"
             android:layout_width="60dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="2dp"
+            android:backgroundTint="#FFEB3B"
+            android:text="송금" />
+
         <Button
             android:id="@+id/button2"
-            android:text="받기"
-            android:layout_marginRight="15dp"
-            android:layout_gravity="center_vertical"
             android:layout_width="60dp"
-            android:layout_height="50dp" />
-        <Button
-            android:id="@+id/button3"
-            android:text="갚기"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="2dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="60dp"
-            android:layout_height="50dp" />
-        <Button
-            android:outlineSpotShadowColor="#000000"
-            android:id="@+id/button4"
+            android:backgroundTint="#FFEB3B"
             android:text="받기"
-            android:layout_gravity="center_vertical"
-            android:layout_width="60dp"
-            android:layout_height="50dp" />
+            android:textColor="#090909" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -134,8 +134,7 @@ public class SecondPeopleFragment extends Fragment {
                 textView = (TextView)view.findViewById(R.id.frienditem_textview);
                 button1 = (Button)view.findViewById(R.id.button1);
                 button2 = (Button)view.findViewById(R.id.button2);
-                button3 = (Button)view.findViewById(R.id.button3);
-                button4 = (Button)view.findViewById(R.id.button4);
+
 
             }
         }

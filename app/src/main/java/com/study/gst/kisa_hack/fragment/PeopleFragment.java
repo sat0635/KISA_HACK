@@ -103,18 +103,7 @@ public class PeopleFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-            ((CustomViewHolder)holder).button3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    return;
-                }
-            });
-            ((CustomViewHolder)holder).button4.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    return;
-                }
-            });
+
 
             Log.d("tag","lopal"+userModels.get(position).profileImageUrl.toString());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -136,16 +125,13 @@ public class PeopleFragment extends Fragment {
             public TextView textView;
             public Button button1;
             public Button button2;
-            public Button button3;
-            public Button button4;
+
             public CustomViewHolder(View view) {
                 super(view);
                 imageView = (ImageView) view.findViewById(R.id.frienditem_imageview);
                 textView = (TextView)view.findViewById(R.id.frienditem_textview);
                 button1 = (Button)view.findViewById(R.id.button1);
                 button2 = (Button)view.findViewById(R.id.button2);
-                button3 = (Button)view.findViewById(R.id.button3);
-                button4 = (Button)view.findViewById(R.id.button4);
 
             }
         }
