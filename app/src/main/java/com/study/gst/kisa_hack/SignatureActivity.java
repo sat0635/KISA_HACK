@@ -26,6 +26,8 @@ import androidx.core.app.ActivityCompat;
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -156,6 +158,7 @@ public class SignatureActivity extends AppCompatActivity {
                 String filename = formatter.format(now) + ".png";
                 //storage 주소와 폴더 파일명을 지정해 준다.
 
+
                 mStorageRef = FirebaseStorage.getInstance().getReference();
                 Uri file = Uri.fromFile(new File("/storage/emulated/0/Pictures/SignaturePad/image.jpg"));
                 StorageReference riversRef = mStorageRef.child("images/"+filename);
@@ -175,6 +178,16 @@ public class SignatureActivity extends AppCompatActivity {
                                 // ...
                             }
                         });
+
+                ///////////insert data
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("message");
+
+
+                myRef.setValue("Hello, World!");
+
+
 
             }
 

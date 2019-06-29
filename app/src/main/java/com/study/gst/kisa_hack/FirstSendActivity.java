@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class FirstSendActivity extends AppCompatActivity {
-    private String email;
+    private String debtorEmail;
     private EditText money;
     private Button send_button;
     @Override
@@ -18,7 +18,7 @@ public class FirstSendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first_send);
 
         Intent intent = getIntent();
-        email = intent.getExtras().getString("email");
+        debtorEmail = intent.getExtras().getString("debtorEmail");
 
         send_button = (Button)findViewById(R.id.FirstSendActivity_button_send);
         money = (EditText)findViewById(R.id.FirstSendActivity_edittext_money);
@@ -31,7 +31,7 @@ public class FirstSendActivity extends AppCompatActivity {
                     return;
                 }
                 Intent intent = new Intent(FirstSendActivity.this, SignatureActivity.class);
-                intent.putExtra("email",email);
+                intent.putExtra("debtorEmail",debtorEmail);
                 intent.putExtra("money",money.getText().toString());
                 startActivity(intent);
             }

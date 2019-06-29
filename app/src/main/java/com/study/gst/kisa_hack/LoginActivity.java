@@ -5,11 +5,11 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,SignupActivity.class));
             }
         });
+
+
+        myEmail myemail = (myEmail) getApplication();
+        myemail.setGlobalString(id.getText().toString());
 
         //로그인 인터페이스 리스너
         authStateListener = new FirebaseAuth.AuthStateListener() {
