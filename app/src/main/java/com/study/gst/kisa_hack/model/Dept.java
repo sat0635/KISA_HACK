@@ -7,10 +7,10 @@ public class Dept {
     public String creditor;
     public String money;
     public String uri;
-    public Dept(String deptor, String creditor, String moeny, String uri){
+    public Dept(String deptor, String creditor, String money, String uri){
         this.deptor=deptor;
         this.creditor=creditor;
-        this.money=moeny;
+        this.money=money;
         this.uri=uri;
     }
 }

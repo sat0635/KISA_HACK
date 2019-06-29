@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
     private LinearLayout linearLayout;
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
 
-    private final int SPLASH_DISPLAY_LENGTH = 5000; //splash screen will be shown for 2 seconds
+    private final int SPLASH_DISPLAY_LENGTH = 1000; //splash screen will be shown for 2 seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +48,6 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
 
-
-
-
-
-<<<<<<< HEAD
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-=======
->>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -92,9 +83,7 @@ public class SplashActivity extends AppCompatActivity {
 
 */
     }
-<<<<<<< HEAD
 
-=======
 /*
 >>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
     void displayMessage(){

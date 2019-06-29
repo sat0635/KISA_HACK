@@ -47,6 +47,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -58,7 +60,7 @@ public class SignatureActivity extends AppCompatActivity {
     private Button mClearButton;
     private Button mSaveButton;
     private String creditor;
-    private String deptor;
+    private String deptorEmail;
     private String money;
     private Bitmap jungle ;
     private Bitmap dino;
@@ -73,7 +75,7 @@ public class SignatureActivity extends AppCompatActivity {
         Intent intent = getIntent();
        // myEmail myemail = new myEmail();
         creditor =  ((myEmail)this.getApplication()).getGlobalString();
-        deptor = intent.getExtras().getString("debtorEmail");
+        deptorEmail = intent.getExtras().getString("debtorEmail");
         money = intent.getExtras().getString("money");
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -187,9 +189,13 @@ public class SignatureActivity extends AppCompatActivity {
                 // Write a message to the database
                 String uri = "images/"+filename;
                 Log.v("TAG","TAG");
-                Dept dept = new Dept(deptor,creditor,money,uri);
+
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
+               // Map<String, Dept> depts = new HashMap<>();
+                //depts.put("depts",new Dept(deptorEmail,creditor,money,uri));
+                Dept dept = new Dept(deptorEmail,creditor,money,uri);
                 database.getReference().child("depts").setValue(dept);
+                //database.getReference().child("depts").updateChildren(dept);8m,km, \7
 
 
 
