@@ -51,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-        /*
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
@@ -78,11 +78,11 @@ public class SplashActivity extends AppCompatActivity {
                         displayMessage();
                     }
                 });
-        */
+
 
 
     }
-    /*
+
     void displayMessage(){
         String splash_background = mFirebaseRemoteConfig.getString("splash_background");
         boolean caps = mFirebaseRemoteConfig.getBoolean("splash_message_caps");
@@ -104,6 +104,6 @@ public class SplashActivity extends AppCompatActivity {
             finish();
         }
     }
-    */
+
 
 }
