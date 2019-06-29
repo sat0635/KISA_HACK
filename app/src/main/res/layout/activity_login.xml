@@ -4,12 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#000000">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="402dp"
-        android:src="@drawable/icon" />
+        android:src="@drawable/logo" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -19,7 +20,8 @@
             android:id="@+id/loginActivity_edittext_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="아이디"/>
+            android:hint="아이디"
+            android:background="#FFFFFF"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -31,6 +33,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="패스워드"
+            android:background="#FFFFFF"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
@@ -38,6 +41,7 @@
         android:id="@+id/loginActivity_button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         />
     <Button
         android:background="#F8F042"

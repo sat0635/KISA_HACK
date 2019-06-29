@@ -98,7 +98,7 @@ public class PeopleFragment extends Fragment {
             ((CustomViewHolder)holder).button2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), FirstReceiveActivity.class);
+                    Intent intent = new Intent(view.getContext(), SecondMainActivity.class);
                     intent.putExtra("email",userModels.get(position).email);
                     startActivity(intent);
                 }
@@ -106,9 +106,7 @@ public class PeopleFragment extends Fragment {
             ((CustomViewHolder)holder).button3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), SecondMainActivity.class);
-                    intent.putExtra("email",userModels.get(position).email);
-                    startActivity(intent);
+                    return;
                 }
             });
             ((CustomViewHolder)holder).button4.setOnClickListener(new View.OnClickListener() {
