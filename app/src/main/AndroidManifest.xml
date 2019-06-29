@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstReceiveActivity"></activity>
+        <activity android:name=".SecondMainActivity"></activity>
+        <activity android:name=".FirstReceiveActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".SignatureActivity" />
         <activity android:name=".FirstSendActivity" />
