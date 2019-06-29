@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstSendActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#142846">
 
     <TextView
         android:layout_marginTop="50dp"
@@ -13,29 +14,36 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="원응호에게 보내기"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"/>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="금액을 입력하세요"
-        android:textSize="50dp">
+        android:textColorHint="#FFFFFF"
+        android:textSize="50dp"
+        android:textColor="#FFFFFF">
         <EditText
             android:id="@+id/FirstSendActivity_edittext_money"
             android:gravity="bottom"
             android:hint="보낼금액(원)"
+            android:textColorHint="#FFFF"
             android:textSize="50dp"
             android:layout_width="match_parent"
-            android:layout_height="120dp"/>
+            android:layout_height="120dp"
+            android:textColor="#FFFFFF"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_marginTop="2dp"
         android:layout_width="match_parent"
         android:layout_height="20dp"
+        android:textColor="#FFFFFF"
         android:text="빌린 금액 13000원 남았습니다."/>
     <Button
         android:text="송금 하기"
         android:textSize="40dp"
+        android:textColor="#FFFFFF"
         android:background="@drawable/bt_corner"
         android:layout_gravity="bottom"
         android:layout_marginLeft="50dp"

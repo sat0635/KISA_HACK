@@ -22,7 +22,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="1dp"
             android:layout_marginRight="2dp"
-            android:text="아이디" />
+            android:text="아이디"
+            android:textColor="#FFFFFF"/>
         <Button
             android:id="@+id/button1"
             android:text="송금"
