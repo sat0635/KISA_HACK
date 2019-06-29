@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.study.gst.kisa_hack.model.Dept;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
@@ -46,6 +47,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -56,7 +59,8 @@ public class SignatureActivity extends AppCompatActivity {
     private SignaturePad mSignaturePad;
     private Button mClearButton;
     private Button mSaveButton;
-    private String email;
+    private String creditor;
+    private String deptorEmail;
     private String money;
     private Bitmap jungle ;
     private Bitmap dino;
@@ -69,7 +73,9 @@ public class SignatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signature);
         imageView = findViewById(R.id.image_view);
         Intent intent = getIntent();
-        email = intent.getExtras().getString("email");
+       // myEmail myemail = new myEmail();
+        creditor =  ((myEmail)this.getApplication()).getGlobalString();
+        deptorEmail = intent.getExtras().getString("debtorEmail");
         money = intent.getExtras().getString("money");
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -181,13 +187,13 @@ public class SignatureActivity extends AppCompatActivity {
 
                 ///////////insert data
                 // Write a message to the database
+                String uri = "images/"+filename;
+                Log.v("TAG","TAG");
+
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("message");
 
-
-                myRef.setValue("Hello, World!");
-
-
+               Dept dept = new Dept(deptorEmail,creditor,money,uri);
+               database.getReference().child("depts").push().setValue(dept);
 
             }
 
