@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class FirstSendActivity extends AppCompatActivity {
-    private String debtorEmail;
+    private String deptorEmail;
     private EditText money;
     private Button send_button;
     private Button day;
@@ -28,8 +28,8 @@ public class FirstSendActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first_send);
 
         Intent intent = getIntent();
-        debtorEmail = intent.getExtras().getString("debtorEmail");
-        Log.d("TESTDE",debtorEmail);
+        deptorEmail = intent.getExtras().getString("deptorEmail");
+        Log.d("TESTDE",deptorEmail);
 
         send_button = (Button)findViewById(R.id.FirstSendActivity_button_send);
         money = (EditText)findViewById(R.id.FirstSendActivity_edittext_money);
@@ -54,7 +54,7 @@ public class FirstSendActivity extends AppCompatActivity {
                     return;
                 }
                 Intent intent = new Intent(FirstSendActivity.this, SignatureActivity.class);
-                intent.putExtra("debtorEmail",debtorEmail);
+                intent.putExtra("debtorEmail",deptorEmail);
                 intent.putExtra("money",money.getText().toString());
                 startActivity(intent);
             }

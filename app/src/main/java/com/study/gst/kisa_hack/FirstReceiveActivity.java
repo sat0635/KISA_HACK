@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class FirstReceiveActivity extends AppCompatActivity {
     private ListView listView;
     private String url;
-
+    private String deptorEmail;
     @Override
     protected void onResume() {
         super.onResume();
@@ -42,11 +42,11 @@ public class FirstReceiveActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         url = intent.getExtras().getString("image");
-
+        deptorEmail = intent.getExtras().getString("deptorEmail");
         ArrayList<String> items = new ArrayList<>();
 
-        items.add("김광석거리");
-
+        items.add("2019/06/27, 20000원");
+        items.add("2019/05/28, 170000원");
         //이미지
         CustomAdapter adapter = new CustomAdapter(this, 0, items);
         listView.setAdapter(adapter);
@@ -77,11 +77,11 @@ public class FirstReceiveActivity extends AppCompatActivity {
             ImageView imageView = (ImageView)v.findViewById(R.id.imageView);
             Button button = (Button)v.findViewById(R.id.button);
             // 리스트뷰의 아이템에 이미지를 변경한다.
-            if("김광석거리".equals(items.get(position))){
-                Glide.with(FirstReceiveActivity.this).load( url)
-                        .apply(new RequestOptions().circleCrop())
-                        .into(imageView);
-            }
+
+            Glide.with(FirstReceiveActivity.this).load( url)
+                    .apply(new RequestOptions().circleCrop())
+                    .into(imageView);
+
             TextView textView = (TextView)v.findViewById(R.id.textView);
             textView.setText(items.get(position));
 
@@ -89,7 +89,8 @@ public class FirstReceiveActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(FirstReceiveActivity.this,FirstReceiveActivity.class));
+                    Intent intent = new Intent(FirstReceiveActivity.this, DeptorSignatureActivity.class);
+                    startActivity(intent);
                 }
             });
 
