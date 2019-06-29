@@ -191,14 +191,9 @@ public class SignatureActivity extends AppCompatActivity {
                 Log.v("TAG","TAG");
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-               // Map<String, Dept> depts = new HashMap<>();
-                //depts.put("depts",new Dept(deptorEmail,creditor,money,uri));
-                Dept dept = new Dept(deptorEmail,creditor,money,uri);
-                database.getReference().child("depts").setValue(dept);
-                //database.getReference().child("depts").updateChildren(dept);8m,km, \7
 
-
-
+               Dept dept = new Dept(deptorEmail,creditor,money,uri);
+               database.getReference().child("depts").push().setValue(dept);
 
             }
 
