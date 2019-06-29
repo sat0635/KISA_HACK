@@ -193,7 +193,7 @@ public class SignatureActivity extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
 
                Dept dept = new Dept(deptorEmail,creditor,money,uri);
-               database.getReference().child("depts").push().setValue(dept);
+               database.getReference().child("KB").child("depts").push().setValue(dept);
 
             }
 
