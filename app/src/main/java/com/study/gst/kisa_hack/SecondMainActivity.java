@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.study.gst.kisa_hack.fragment.PeopleFragment;
-
+import com.study.gst.kisa_hack.fragment.SecondPeopleFragment;
 public class SecondMainActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +19,7 @@ public class SecondMainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.secondmainactivity_bottomnavigationview);
 
-        getFragmentManager().beginTransaction().replace(R.id.secondmainactivity_framelayout, new PeopleFragment()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.secondmainactivity_framelayout, new SecondPeopleFragment()).commit();
 
     }
 }

@@ -52,7 +52,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
-public class SignatureActivity extends AppCompatActivity {
+public class SecondReceiveSignatureActivity extends AppCompatActivity {
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -66,7 +66,6 @@ public class SignatureActivity extends AppCompatActivity {
     private Bitmap dino;
     private ImageView imageView;
     private StorageReference mStorageRef;
-    private String test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +73,7 @@ public class SignatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signature);
         imageView = findViewById(R.id.image_view);
         Intent intent = getIntent();
-       // myEmail myemail = new myEmail();
+        // myEmail myemail = new myEmail();
         creditor =  ((myEmail)this.getApplication()).getGlobalString();
         deptorEmail = intent.getExtras().getString("debtorEmail");
         money = intent.getExtras().getString("money");
@@ -82,7 +81,7 @@ public class SignatureActivity extends AppCompatActivity {
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
             public void onStartSigning() {
-                Toast.makeText(SignatureActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SecondReceiveSignatureActivity.this, "OnStartSigning", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -113,14 +112,14 @@ public class SignatureActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                 if (addJpgSignatureToGallery(signatureBitmap,"Signature.jpg")) {
-                    Toast.makeText(SignatureActivity.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignatureActivity.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
                 }
                 if (addSvgSignatureToGallery(mSignaturePad.getSignatureSvg())) {
-                    Toast.makeText(SignatureActivity.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignatureActivity.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -152,7 +151,7 @@ public class SignatureActivity extends AppCompatActivity {
 
                 int w = dino.getWidth();
                 int h = dino.getHeight();
-                //canvas.drawBitmap(result, jungle.getWidth() / 10 * 7, jungle.getHeight() / 10 * 8, null);
+                canvas.drawBitmap(result, jungle.getWidth() / 10 * 7, jungle.getHeight() / 10 * 8, null);
                 canvas.drawBitmap(result, jungle.getWidth() / 10 * 7, jungle.getHeight() / 10 * 6, null);
                 imageView.setImageBitmap(jungle);
 
@@ -195,34 +194,23 @@ public class SignatureActivity extends AppCompatActivity {
 
                 Dept dept = new Dept(deptorEmail,creditor,money,uri);
                 database.getReference().child("depts").push().setValue(dept);
-                //PhpTest task = new PhpTest();
-                //try {
-               //     test = task.execute("http://155.230.91.237:25596/androidupload/getImages.php").get();
-                //} catch (ExecutionException e) {
-                //    e.printStackTrace();
-                //} catch (InterruptedException e) {
-                //    e.printStackTrace();
-                //}
-                //String temp;
-                //temp = test.split("\\[")[1];
-                //Log.d("tag",temp+"lopal");
+
 
                 try {
                     String uploadId = UUID.randomUUID().toString();
 ///storage/emulated/0/DCIM/Camera/20190520_123702.jpg
                     ///storage/emulated/0/Images/image.png
                     //Creating a multi part request
-                    new MultipartUploadRequest(SignatureActivity.this, uploadId, Constants.UPLOAD_URL)
+                    new MultipartUploadRequest(SecondReceiveSignatureActivity.this, uploadId, Constants.UPLOAD_URL)
                             .addFileToUpload("/storage/emulated/0/Pictures/SignaturePad/image.jpg", "image") //Adding file
                             .addParameter("name", deptorEmail)
-                            .addParameter("email",creditor)
-                            .addParameter("number","2")//Adding text parameter to the request
+                            .addParameter("email",creditor)//Adding text parameter to the request
                             .setNotificationConfig(new UploadNotificationConfig())
                             .setMaxRetries(2)
                             .startUpload(); //Starting the upload
 
                 } catch (Exception exc) {
-                    Toast.makeText(SignatureActivity.this, exc.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, exc.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -241,7 +229,7 @@ public class SignatureActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length <= 0
                         || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(SignatureActivity.this, "Cannot write images to external storage", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondReceiveSignatureActivity.this, "Cannot write images to external storage", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -284,7 +272,7 @@ public class SignatureActivity extends AppCompatActivity {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri contentUri = Uri.fromFile(photo);
         mediaScanIntent.setData(contentUri);
-        SignatureActivity.this.sendBroadcast(mediaScanIntent);
+        SecondReceiveSignatureActivity.this.sendBroadcast(mediaScanIntent);
     }
 
     public boolean addSvgSignatureToGallery(String signatureSvg) {

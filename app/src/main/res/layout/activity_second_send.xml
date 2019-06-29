@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstSendActivity"
+    tools:context=".SecondSendActivity"
     android:orientation="vertical"
     android:background="#142846">
 
@@ -24,7 +24,7 @@
         android:textSize="50dp"
         android:textColor="#FFFFFF">
         <EditText
-            android:id="@+id/FirstSendActivity_edittext_money"
+            android:id="@+id/SecondSendActivity_edittext_money"
             android:gravity="bottom"
             android:hint="보낼금액(원)"
             android:textColorHint="#FFFF"
@@ -36,38 +36,12 @@
 
 
 
-
-    <Button
-        android:text="갚는 날짜 선택"
-        android:textSize="15dp"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:textColor="#090909"
-        android:background="@drawable/bt_corner"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:id="@+id/btnchangedate"
-        android:onClick="mOnClick"
-      />
-
-
     <TextView
-        android:id="@+id/txtdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:text="date"
-        android:layout_gravity="center_horizontal"
-        />
-
-
-
-
-
-
-
-
+        android:text="빌린 금액 13000원 남았습니다."/>
 
     <Button
         android:text="송금 하기"
@@ -78,7 +52,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="100dp"
-        android:id="@+id/FirstSendActivity_button_send"
+        android:id="@+id/SecondSendActivity_button_send"
         android:layout_width="300dp"
         android:layout_height="150dp" />
 </LinearLayout>

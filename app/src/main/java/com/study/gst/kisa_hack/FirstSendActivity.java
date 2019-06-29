@@ -56,6 +56,7 @@ public class FirstSendActivity extends AppCompatActivity {
                 Intent intent = new Intent(FirstSendActivity.this, SignatureActivity.class);
                 intent.putExtra("debtorEmail",debtorEmail);
                 intent.putExtra("money",money.getText().toString());
+
                 startActivity(intent);
             }
         });

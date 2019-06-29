@@ -104,6 +104,8 @@ public class SignupActivity extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 SignupActivity.this.finish();
+                                                FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+                                                firebaseAuth.signOut();
                                             }
                                         });
 
