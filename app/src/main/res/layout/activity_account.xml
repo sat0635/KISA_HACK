@@ -29,7 +29,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="나의 정보"
+            android:text="원응호의 정보"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="35dp"
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="158"
+                    android:text="7"
                     android:textColor="#fff"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="169"
+                    android:text="13"
                     android:textColor="#fff"
                     android:textSize="22sp"
                     android:textStyle="bold" />
