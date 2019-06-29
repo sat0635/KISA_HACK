@@ -4,19 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstReceiveActivity"
-    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_marginTop="2dp"
+    android:orientation="horizontal" >
+
+
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal" />
 
-        <androidx.recyclerview.widget.RecyclerView
 
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
-    </LinearLayout>
 </LinearLayout>

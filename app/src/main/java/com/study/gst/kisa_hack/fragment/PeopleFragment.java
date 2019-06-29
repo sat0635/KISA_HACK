@@ -21,21 +21,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.study.gst.kisa_hack.FirstReceiveActivity;
 import com.study.gst.kisa_hack.FirstSendActivity;
-import com.study.gst.kisa_hack.LoginActivity;
-import com.study.gst.kisa_hack.MainActivity;
 import com.study.gst.kisa_hack.R;
-import com.study.gst.kisa_hack.SecondMainActivity;
 import com.study.gst.kisa_hack.chat.MessageActivity;
 import com.study.gst.kisa_hack.model.UserModel;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,8 +92,9 @@ public class PeopleFragment extends Fragment {
             ((CustomViewHolder)holder).button2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), SecondMainActivity.class);
+                    Intent intent = new Intent(view.getContext(), FirstReceiveActivity.class);
                     intent.putExtra("email",userModels.get(position).email);
+                    intent.putExtra("image",userModels.get(position).profileImageUrl);
                     startActivity(intent);
                 }
             });
