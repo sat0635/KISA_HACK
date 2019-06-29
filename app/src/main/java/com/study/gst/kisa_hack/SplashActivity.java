@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-
+/*
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -47,12 +47,12 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+*/
+
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-/*
         linearLayout = (LinearLayout)findViewById(R.id.splashactivity_linearlayout);
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
@@ -75,17 +75,11 @@ public class SplashActivity extends AppCompatActivity {
                         displayMessage();
                     }
                 });
-<<<<<<< HEAD
 
-=======
->>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
-
-
-*/
     }
 
-/*
->>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
+
+
     void displayMessage(){
         String splash_background = mFirebaseRemoteConfig.getString("splash_background");
         boolean caps = mFirebaseRemoteConfig.getBoolean("splash_message_caps");
@@ -108,5 +102,5 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-*/
+
 }
