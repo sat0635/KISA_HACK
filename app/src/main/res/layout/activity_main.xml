@@ -9,6 +9,7 @@
 
     <FrameLayout
         android:id="@+id/mainactivity_framelayout"
+        android:background="#142846"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
