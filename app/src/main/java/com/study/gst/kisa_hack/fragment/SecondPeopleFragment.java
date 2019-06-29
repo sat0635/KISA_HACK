@@ -1,9 +1,5 @@
 package com.study.gst.kisa_hack.fragment;
 
-
-
-
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,8 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,20 +30,20 @@ import com.study.gst.kisa_hack.model.UserModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PeopleFragment extends Fragment {
+public class SecondPeopleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_people, container, false);
-        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.peoplefragment_recyclerview);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.secondpeoplefragment_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(inflater.getContext()));
-        recyclerView.setAdapter(new PeopleFragmentRecyclerViewAdapter());
+        recyclerView.setAdapter(new SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter());
         return view;
     }
 
     class PeopleFragmentRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         List<UserModel> userModels;
         public PeopleFragmentRecyclerViewAdapter(){
-           userModels = new ArrayList<>();
+            userModels = new ArrayList<>();
             FirebaseDatabase.getInstance().getReference().child("users").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -70,7 +66,7 @@ public class PeopleFragment extends Fragment {
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_friend,parent,false);
 
-            return new CustomViewHolder(view);
+            return new SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder(view);
         }
 
         @Override
@@ -79,26 +75,36 @@ public class PeopleFragment extends Fragment {
                     (holder.itemView.getContext())
                     .load(userModels.get(position).profileImageUrl)
                     .apply(new RequestOptions().circleCrop())
-                    .into(((CustomViewHolder)holder).imageView);
-            ((CustomViewHolder)holder).textView.setText(userModels.get(position).userName);
-            ((CustomViewHolder)holder).button1.setOnClickListener(new View.OnClickListener() {
+                    .into(((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).imageView);
+            ((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).textView.setText(userModels.get(position).userName);
+            ((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), FirstSendActivity.class);
-                    intent.putExtra("deptorEmail",userModels.get(position).email);
+                    intent.putExtra("debtorEmail",userModels.get(position).email);
                     startActivity(intent);
                 }
             });
-            ((CustomViewHolder)holder).button2.setOnClickListener(new View.OnClickListener() {
+            ((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).button2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), FirstReceiveActivity.class);
-                    intent.putExtra("image",userModels.get(position).profileImageUrl);
-                    intent.putExtra("deptorEmail",userModels.get(position).email);
+                    intent.putExtra("email",userModels.get(position).email);
                     startActivity(intent);
                 }
             });
-
+            ((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    return;
+                }
+            });
+            ((SecondPeopleFragment.PeopleFragmentRecyclerViewAdapter.CustomViewHolder)holder).button4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    return;
+                }
+            });
 
             Log.d("tag","lopal"+userModels.get(position).profileImageUrl.toString());
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -120,13 +126,15 @@ public class PeopleFragment extends Fragment {
             public TextView textView;
             public Button button1;
             public Button button2;
-
+            public Button button3;
+            public Button button4;
             public CustomViewHolder(View view) {
                 super(view);
                 imageView = (ImageView) view.findViewById(R.id.frienditem_imageview);
                 textView = (TextView)view.findViewById(R.id.frienditem_textview);
                 button1 = (Button)view.findViewById(R.id.button1);
                 button2 = (Button)view.findViewById(R.id.button2);
+
 
             }
         }
