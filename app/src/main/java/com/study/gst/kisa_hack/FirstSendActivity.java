@@ -17,7 +17,9 @@ import java.util.GregorianCalendar;
 
 public class FirstSendActivity extends AppCompatActivity {
     private String deptorEmail;
+    private String name;
     private EditText money;
+    private TextView textview;
     private Button send_button;
     private Button day;
     private  int mYear, mMonth, mDay, mHour, mMinute;
@@ -29,14 +31,16 @@ public class FirstSendActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         deptorEmail = intent.getExtras().getString("deptorEmail");
+        name = intent.getExtras().getString("name");
         Log.d("TESTDE",deptorEmail);
 
+        textview = (TextView)findViewById(R.id.username);
         send_button = (Button)findViewById(R.id.FirstSendActivity_button_send);
         money = (EditText)findViewById(R.id.FirstSendActivity_edittext_money);
         day = (Button)findViewById(R.id.btnchangedate);
         mTxtDate = (TextView)findViewById(R.id.txtdate);
 
-
+        textview.setText(name);
         Calendar cal = new GregorianCalendar();
         mYear = cal.get(Calendar.YEAR);
         mMonth = cal.get(Calendar.MONTH);

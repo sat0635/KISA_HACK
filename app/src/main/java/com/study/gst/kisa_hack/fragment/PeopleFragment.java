@@ -86,6 +86,7 @@ public class PeopleFragment extends Fragment {
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), FirstSendActivity.class);
                     intent.putExtra("deptorEmail",userModels.get(position).email);
+                    intent.putExtra("name",userModels.get(position).userName);
                     startActivity(intent);
                 }
             });
