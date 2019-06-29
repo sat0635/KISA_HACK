@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class FirstSendActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         debtorEmail = intent.getExtras().getString("debtorEmail");
+        Log.d("TESTDE",debtorEmail);
 
         send_button = (Button)findViewById(R.id.FirstSendActivity_button_send);
         money = (EditText)findViewById(R.id.FirstSendActivity_edittext_money);

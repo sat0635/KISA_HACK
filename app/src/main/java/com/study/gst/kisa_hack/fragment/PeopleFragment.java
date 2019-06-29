@@ -88,7 +88,7 @@ public class PeopleFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), FirstSendActivity.class);
-                    intent.putExtra("email",userModels.get(position).email);
+                    intent.putExtra("debtorEmail",userModels.get(position).email);
                     startActivity(intent);
                 }
             });

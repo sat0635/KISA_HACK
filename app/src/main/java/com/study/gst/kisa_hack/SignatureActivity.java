@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.study.gst.kisa_hack.model.Dept;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
@@ -56,7 +57,8 @@ public class SignatureActivity extends AppCompatActivity {
     private SignaturePad mSignaturePad;
     private Button mClearButton;
     private Button mSaveButton;
-    private String email;
+    private String creditor;
+    private String deptor;
     private String money;
     private Bitmap jungle ;
     private Bitmap dino;
@@ -69,7 +71,9 @@ public class SignatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signature);
         imageView = findViewById(R.id.image_view);
         Intent intent = getIntent();
-        email = intent.getExtras().getString("email");
+       // myEmail myemail = new myEmail();
+        creditor =  ((myEmail)this.getApplication()).getGlobalString();
+        deptor = intent.getExtras().getString("debtorEmail");
         money = intent.getExtras().getString("money");
         mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
         mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -181,11 +185,12 @@ public class SignatureActivity extends AppCompatActivity {
 
                 ///////////insert data
                 // Write a message to the database
+                String uri = "images/"+filename;
+                Log.v("TAG","TAG");
+                Dept dept = new Dept(deptor,creditor,money,uri);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("message");
+                database.getReference().child("depts").setValue(dept);
 
-
-                myRef.setValue("Hello, World!");
 
 
 

@@ -49,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.parseColor(splash_background));
         }
         id = (EditText) findViewById(R.id.loginActivity_edittext_id);
+        ((myEmail)this.getApplication()).setGlobalString(id.getText().toString());
+        Log.d("Global",id.getText().toString());
         password = (EditText)findViewById(R.id.loginActivity_edittext_password);
 
 
@@ -71,8 +73,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        myEmail myemail = (myEmail) getApplication();
-        myemail.setGlobalString(id.getText().toString());
+
+
 
         //로그인 인터페이스 리스너
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -94,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     void loginEvent(){
+        ((myEmail)this.getApplication()).setGlobalString(id.getText().toString());
+        Log.d("Global",id.getText().toString());
         firebaseAuth.signInWithEmailAndPassword(id.getText().toString(), password.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
