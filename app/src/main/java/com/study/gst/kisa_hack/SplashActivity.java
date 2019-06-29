@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+/*
 
 
 
@@ -50,9 +50,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+*/
 
 
-/*
         linearLayout = (LinearLayout)findViewById(R.id.splashactivity_linearlayout);
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
@@ -75,17 +75,10 @@ public class SplashActivity extends AppCompatActivity {
                         displayMessage();
                     }
                 });
-<<<<<<< HEAD
-
-=======
->>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
 
 
-*/
     }
 
-/*
->>>>>>> ddc74d093c23b8833af98bff79e9a8e826981803
     void displayMessage(){
         String splash_background = mFirebaseRemoteConfig.getString("splash_background");
         boolean caps = mFirebaseRemoteConfig.getBoolean("splash_message_caps");
@@ -108,5 +101,4 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-*/
 }
