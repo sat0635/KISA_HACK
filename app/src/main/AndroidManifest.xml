@@ -10,6 +10,7 @@
     <application
         android:name=".myEmail"
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="돌려듀오"
         android:supportsRtl="true"
@@ -22,8 +23,7 @@
         <activity android:name=".chat.MessageActivity" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppFullScreenTheme"
-            android:icon="@drawable/back_logo">
+            android:theme="@style/AppFullScreenTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
