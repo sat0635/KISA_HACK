@@ -34,12 +34,7 @@
             android:textColor="#FFFFFF"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:layout_marginTop="2dp"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:textColor="#FFFFFF"
-        android:text="빌린 금액 13000원 남았습니다."/>
+   
 
 
     <Button
