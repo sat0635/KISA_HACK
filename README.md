@@ -14,4 +14,5 @@ KB-KISA에서 주최한 핀테크 해커톤 '봇듀오' 팀의 작품입니다
 
 <img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/61928719-4f3eca80-afb4-11e9-956f-338991527c19.jpg">
 
+<img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/61928942-06d3dc80-afb5-11e9-99f0-9308cd735e24.jpg">
 
