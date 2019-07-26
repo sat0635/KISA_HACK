@@ -1,6 +1,7 @@
 # KISA_HACK
 KB-KISA에서 주최한 핀테크 해커톤 '봇듀오' 팀의 작품입니다
 카카오페이나 토스같은 개인간의 금융 거래가 발생했을 시 사인기능을 통해 자동으로 차용증을 만들어주는 프로그램입니다.
+
 <img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/61928647-13a40080-afb4-11e9-97b3-1fe7887836f9.png">
 
 <img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/61928711-477f2600-afb4-11e9-82a5-491ec2d747bd.jpg">
